@@ -1,0 +1,23 @@
+<mat-card *ngIf="date">
+  {{date | date: "dd/MM/yyyy"}}&nbsp;
+  <mat-card-content>
+    <table>
+      <tr *ngFor="let appointment of appointments;">
+        <td (click)="editMode = true">
+          <input matInput placeholder="" (change)="update(appointment, appointment.$key)">
+          {{appointment.date | date: "hh:mm"}}
+        </td>
+        <td>
+          <button md-mini-fab color="warn" (click)="removeAppointment.emit(appointment.$key)">
+            <span>-</span>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button md-button color="primary" class="button-block" (click)="add()">
+      <span>+</span>
+    </button>
+  </mat-card-actions>
+</mat-card>

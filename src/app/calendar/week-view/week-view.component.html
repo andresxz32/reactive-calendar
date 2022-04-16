@@ -1,0 +1,14 @@
+<h2>Week: {{week}}/{{year}}</h2>
+        <table>
+            <tr>
+                <td *ngFor="let day of days">
+                    <day-detail
+                            (addAppointment)="addAppointment.emit($event)"
+                            (removeAppointment)="removeAppointment.emit($event)"
+                            (updateAppointment)="updateAppointment.emit($event)"
+                            [date]="day?.date"
+                            [appointments]="day?.appointments">
+                    </day-detail>
+                </td>
+            </tr>
+        </table>

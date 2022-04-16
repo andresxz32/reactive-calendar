@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <span>Reactive calendar</span>
+    <button mat-fab (click)="previous.emit()" color="primary">
+      <span>
+        < </span>
+    </button>
+    <button mat-fab (click)="next.emit()" color="primary">
+      <span> > </span>
+    </button>
+    <button mat-button (click)="setViewMode.emit(VIEW_MODE.DAY)">Day</button>
+    <button mat-button (click)="setViewMode.emit(VIEW_MODE.WEEK)">Week</button>
+    <button mat-button (click)="setViewMode.emit(VIEW_MODE.MONTH)">Month</button>
+</mat-toolbar>

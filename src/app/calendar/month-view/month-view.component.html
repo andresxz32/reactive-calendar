@@ -1,0 +1,15 @@
+<h2>Month: {{month + 1}}/{{year}}</h2>
+<table>
+    <tr *ngFor="let week of weeks">
+        <td *ngFor="let day of week">
+            <day-detail
+                    (addAppointment)="addAppointment.emit($event)"
+                    (removeAppointment)="removeAppointment.emit($event)"
+                    (updateAppointment)="updateAppointment.emit($event)"
+                    [date]="day?.date"
+                    [appointments]="day?.appointments">
+            </day-detail>
+        </td>
+    </tr>
+</table>
+
